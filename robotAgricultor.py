@@ -19,3 +19,59 @@ class EntornoRobot(Parcelas):
     robotubicacion = random.randint(0,2)
     costo=0
 
+######################################################################################################################
+    #El robot agricultor comienza por la parcela 1
+    if robotubicacion == 0:
+            print("1: El robot agricultor se ubica en la Parcela 1")
+            
+            if parcela.ubicacionestado['P1'] == 1:
+                print("2. La Parcela 1 está con mala hierba")
+                parcela.ubicacionestado['P1'] == 0
+                costo = costo + 1
+                print("3. Se eliminó la mala hierba de la Parcela 1, el robot se mueve a la Parcela 2")
+
+                if parcela.ubicacionestado['P2'] == 1:
+                    print("4. La Parcela 2 está con mala hierba")
+                    parcela.ubicacionestado['P2'] == 0
+                    costo = costo + 1
+                    print("5. Se eliminó la mala hierba de la Parcela 2, el robot se mueve a la Parcela 3")
+                    
+                else:
+                   print("4. NO hay mala hierba en la Parcela 2, el robot se mueve a la Parcela 3")
+
+                if parcela.ubicacionestado['P3'] == 1:
+                         print("6. La Parcela 3 está con mala hierba")
+                         parcela.ubicacionestado['P3'] == 0
+                         costo = costo + 1
+                         print("7. Se eliminó la mala hierba de la Parcela 3")
+                         print("------ finaliza ------")
+                         print("costo:", costo)
+                else:
+                     print("6. NO hay mala hierba en la Parcela 3")
+                     print("------ finaliza ------")
+                     print("costo:", costo)               
+                     
+            # Si la parcela 1 esta sin mala hierba, el robot se mueve hacia la Parcela 2 y despues a la Parcela 3
+            else:
+                print("2. NO hay mala hierba en la Parcela 1, el robot se mueve a la Parcela 2")
+                
+                if parcela.ubicacionestado['P2'] == 1:
+                    print("3. La Parcela 2 está con mala hierba")
+                    parcela.ubicacionestado['P2'] == 0
+                    costo = costo + 1
+                    print("4. Se eliminó la mala hierba de la Parcela 2, el robot se mueve a la Parcela 3")
+                else: 
+                    print("3. NO hay mala hierba en la Parcela 2, el robot se mueve a la Parcela 3")
+
+                if parcela.ubicacionestado['P3'] == 1:
+                     print("5. La Parcela 3 está con mala hierba")
+                     parcela.ubicacionestado['C'] == 0
+                     costo = costo + 1
+                     print("6. Se eliminó la mala hierba de la Parcela 3")
+                     print("------ finaliza -----")
+                     print("costo:", costo)
+
+                else:
+                      print("5. NO hay mala hierba en la Parcela 3")
+                      print("------ finaliza -------")
+                      print("costo:", costo)
