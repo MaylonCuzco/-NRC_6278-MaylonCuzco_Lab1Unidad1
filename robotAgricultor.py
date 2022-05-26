@@ -65,7 +65,7 @@ class EntornoRobot(Parcelas):
 
                 if parcela.ubicacionestado['P3'] == 1:
                      print("5. La Parcela 3 está con mala hierba")
-                     parcela.ubicacionestado['C'] == 0
+                     parcela.ubicacionestado['P3'] == 0
                      costo = costo + 1
                      print("6. Se eliminó la mala hierba de la Parcela 3")
                      print("------ finaliza -----")
@@ -174,7 +174,7 @@ class EntornoRobot(Parcelas):
                 
                 if parcela.ubicacionestado['P2'] == 1:
                     print("3. La Parcela 2 está con mala hierba")
-                    parcela.ubicacionestado['B'] == 0
+                    parcela.ubicacionestado['P2'] == 0
                     costo = costo + 1
                     print("4. Se eliminó la mala hierba de la Parcela 2, el robot se mueve a la Parcela 1")
                 else:
